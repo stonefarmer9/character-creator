@@ -12,6 +12,8 @@ const TableBody = props => {
         <td>{row.height}</td>
         <td><button onClick={() => props.removeCharacter(index)}>Delete</button>
         </td>
+        <td><button onClick={() => props.editCharacter(index)}>Edit</button>
+        </td>
       </tr>
     )
   })

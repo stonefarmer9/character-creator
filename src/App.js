@@ -12,6 +12,11 @@ export default class App extends Component {
     this.setState({
       addCharacter: true
     })
+
+  }
+
+  editCharacter = () => {
+
   }
 
   removeCharacter = index => {
@@ -25,23 +30,31 @@ export default class App extends Component {
   }
 
   handleSubmit = character => {
-    this.setState({characters: [...this.state.characters, character], addCharacter: false})
+    this.setState({characters: [...this.state.characters, character], addCharacter: false}, function(){
+      this.saveCharacter(character)
+    })
+  }
+
+  saveCharacter = character => {
+    localStorage.setItem('characters', JSON.stringify(this.state.characters))
   }
 
     render() {
-      const {characters, addCharacter} = this.state;
+
+      const {addCharacter} = this.state;
 
       return addCharacter ? this.renderWithForm() : this.renderWithOutForm()
     }
 
     renderWithForm(){
-      const {characters, addCharacter} = this.state;
+      const {characters} = this.state;
 
       return(
         <div className="characterTable">
             <Table
               characterData={characters}
-              removeCharacter = {this.removeCharacter}
+              removeCharacter={this.removeCharacter}
+              editCharacter={this.editCharacter}
            />
 
              < SimpleCharacterInfoForm
@@ -56,18 +69,23 @@ export default class App extends Component {
     }
 
     renderWithOutForm(){
-      const {characters, addCharacter} = this.state;
+      const {characters} = this.state;
 
       return(
         <div className="characterTable">
             <Table
               characterData={characters}
               removeCharacter = {this.removeCharacter}
+              editCharacter={this.editCharacter}
            />
 
           <button onClick={this.addCharacter}>Add Character</button>
 
         </div>
       )
+    }
+
+    retrieveCharacters(){
+
     }
 }
