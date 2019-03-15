@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Table from './Table'
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
+
 export default class App extends Component {
   state = {
     addCharacter: false,
-    characters: []
+    characters: JSON.parse(localStorage.getItem('characters'))
 
   }
 
@@ -15,7 +16,8 @@ export default class App extends Component {
 
   }
 
-  editCharacter = () => {
+  editCharacter = index => {
+    const { characters } = this.state;
 
   }
 
@@ -26,29 +28,31 @@ export default class App extends Component {
       characters: characters.filter((character, i) => {
         return i !==index;
       })
-    })
+    }, function(){ this.saveCharacters()})
   }
 
   handleSubmit = character => {
     this.setState({characters: [...this.state.characters, character], addCharacter: false}, function(){
-      this.saveCharacter(character)
+      this.saveCharacters()
     })
   }
 
-  saveCharacter = character => {
+  saveCharacters = () => {
     localStorage.setItem('characters', JSON.stringify(this.state.characters))
   }
 
     render() {
-
+      const {characters} = this.state;
       const {addCharacter} = this.state;
 
-      return addCharacter ? this.renderWithForm() : this.renderWithOutForm()
+      return addCharacter ?
+      this.renderWithForm(characters) :
+      this.renderWithOutForm(characters)
     }
 
-    renderWithForm(){
-      const {characters} = this.state;
 
+
+    renderWithForm(characters){
       return(
         <div className="characterTable">
             <Table
@@ -56,21 +60,15 @@ export default class App extends Component {
               removeCharacter={this.removeCharacter}
               editCharacter={this.editCharacter}
            />
-
              < SimpleCharacterInfoForm
                 handleSubmit={this.handleSubmit}
             />
-
-
           <button onClick={this.addCharacter}>Add Character</button>
-
         </div>
       )
     }
 
-    renderWithOutForm(){
-      const {characters} = this.state;
-
+    renderWithOutForm(characters){
       return(
         <div className="characterTable">
             <Table
@@ -78,14 +76,8 @@ export default class App extends Component {
               removeCharacter = {this.removeCharacter}
               editCharacter={this.editCharacter}
            />
-
           <button onClick={this.addCharacter}>Add Character</button>
-
         </div>
       )
-    }
-
-    retrieveCharacters(){
-
     }
 }
