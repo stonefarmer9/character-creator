@@ -1,58 +1,82 @@
 import React, { Component } from 'react';
 import Table from './Table'
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
+import CharacterSkillsForm from './characterSkillsForm'
 
 export default class App extends Component {
   state = {
-    addCharacter: false,
-    characters: JSON.parse(localStorage.getItem('characters'))
+    addForm: false,
+    editForm: false,
+    characters: JSON.parse(localStorage.getItem('characters')),
+    character: []
 
   }
 
   addCharacter = () => {
     this.setState({
-      addCharacter: true
+      addForm: true
     })
 
   }
 
   editCharacter = index => {
     const { characters } = this.state;
-
-  }
+    this.setState({
+      character: characters.filter((character, i) => {
+        return i === index
+      }),
+    editForm: true})
+    }
 
   removeCharacter = index => {
     const { characters } = this.state;
 
     this.setState({
       characters: characters.filter((character, i) => {
-        return i !==index;
+        return i !== index;
       })
     }, function(){ this.saveCharacters()})
   }
 
   handleSubmit = character => {
-    this.setState({characters: [...this.state.characters, character], addCharacter: false}, function(){
+    this.setState({characters: [...this.state.characters, character], addForm: false}, function(){
       this.saveCharacters()
     })
   }
+
+  handleEdit = newStats => {
+    const { character } = this.state;
+    const { characters} = this.state;
+
+
+    const update = characters.map(function(entry) { return entry.name === character[0].name ? newStats : entry; });
+
+    this.setState({
+      characters: update,
+      editForm: false
+    }
+  )
+}
 
   saveCharacters = () => {
     localStorage.setItem('characters', JSON.stringify(this.state.characters))
   }
 
     render() {
-      const {characters} = this.state;
-      const {addCharacter} = this.state;
+      const {characters, addForm, editForm, character} = this.state;
+      let render = ''
 
-      return addCharacter ?
-      this.renderWithForm(characters) :
-      this.renderWithOutForm(characters)
+      if (addForm === true){
+          render = this.renderAddCharacter(characters)
+        } else if (editForm === true) {
+          render = this.renderEditCharacterSKills(character)
+        } else {
+          render = this.renderWithOutForms(characters)
+        }
+    return render
     }
 
-
-
-    renderWithForm(characters){
+    renderAddCharacter(characters){
       return(
         <div className="characterTable">
             <Table
@@ -68,7 +92,17 @@ export default class App extends Component {
       )
     }
 
-    renderWithOutForm(characters){
+    renderEditCharacterSKills(character){
+      return(
+        <div className="characterSkillsForm">
+          <CharacterSkillsForm
+            handleEdit={this.handleEdit}
+            character={character}/>
+        </div>
+      )
+    }
+
+    renderWithOutForms(characters){
       return(
         <div className="characterTable">
             <Table
