@@ -25,7 +25,6 @@ export default class Table extends Component {
   render () {
     const { characterData, removeCharacter, editCharacter } = this.props
     const { characters } = this.state
-    console.log(characters);
     return(
       <table>
         <TableHeader />

@@ -28,28 +28,29 @@ export default class App extends Component {
     }, function(){ this.saveCharacters()})
   }
 
-  handleSubmit = character => {
-    this.setState({characters: [...this.state.characters, character], addForm: false}, function(){
-      this.saveCharacters()
-    })
-  }
-
-  handleEdit = newStats => {
-    const { character } = this.state;
-    const { characters} = this.state;
-
-
-    const update = characters.map(function(entry) { return entry.name === character[0].name ? newStats : entry; });
-
-    this.setState({
-      characters: update,
-      editForm: false
-    }
-  )
-}
-
-  saveCharacters = () => {
-    localStorage.setItem('characters', JSON.stringify(this.state.characters))
+  handleSubmit = (character) => {
+    console.log(character);
+    const url = "http://localhost:3000//api/v1/basics"
+    const body = JSON.stringify(
+     { name: character.name,
+       age: character.age,
+       sex: character.sex,
+       classs: character.classs,
+       race: character.race,
+       height: character.height
+     })
+     console.log(body);
+     fetch(url,{
+       method: 'POST',
+       headers:{
+         'Content-Type': 'application/json'
+       },
+       body: body
+     }).then((res) =>{
+       return res.json();
+     }).then((res)=>{
+       this.setState({addForm: false})
+     })
   }
 
     render() {
