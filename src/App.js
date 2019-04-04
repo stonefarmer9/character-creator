@@ -7,7 +7,6 @@ export default class App extends Component {
   state = {
     addForm: false,
     editForm: false,
-    characters: JSON.parse(localStorage.getItem('characters')),
     character: []
 
   }
@@ -18,15 +17,6 @@ export default class App extends Component {
     })
 
   }
-
-  editCharacter = index => {
-    const { characters } = this.state;
-    this.setState({
-      character: characters.filter((character, i) => {
-        return i === index
-      }),
-    editForm: true})
-    }
 
   removeCharacter = index => {
     const { characters } = this.state;
@@ -65,7 +55,6 @@ export default class App extends Component {
     render() {
       const {characters, addForm, editForm, character} = this.state;
       let render = ''
-
       if (addForm === true){
           render = this.renderAddCharacter(characters)
         } else if (editForm === true) {

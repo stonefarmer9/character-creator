@@ -26,7 +26,7 @@ export default class CharacterSkillsForm extends Component {
   submitForm = event => {
     const stats = this.state
     event.preventDefault()
-    const character = {...this.props.character, stats}
+    const character = {...this.props.character, ...stats}
     this.props.handleEdit(character);
     this.setState(this.initialState);
   }
