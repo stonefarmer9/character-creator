@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 
 const TableHeader = () => {
   return (
+    <center>
     <thead>
-      <tr>
-        <th>  Name </th>
-        <th>  Age  </th>
-        <th>  Race  </th>
-        <th>  Class  </th>
-        <th>  Sex  </th>
-        <th>  Height  </th>
+      <tr style={{backgroundColor: "#FED896"}}>
+        <th style={{columnWidth: "500px"}}>  Name </th>
+        <th style={{columnWidth: "500px"}}>  Age  </th>
+        <th style={{columnWidth: "500px"}}>  Race  </th>
+        <th style={{columnWidth: "500px"}}>  Class  </th>
+        <th style={{columnWidth: "500px"}}>  Sex  </th>
+        <th style={{columnWidth: "500px"}}>  Height  </th>
+        <th style={{columnWidth: "500px"}}></th>
+        <th style={{columnWidth: "500px"}}></th>
       </tr>
     </thead>
+    </center>
   )
 }
 

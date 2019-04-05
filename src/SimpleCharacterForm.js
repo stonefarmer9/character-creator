@@ -23,6 +23,8 @@ export default class SimpleCharacterInfoForm extends Component {
     })
   }
 
+  
+
   submitForm = event => {
     event.preventDefault()
 

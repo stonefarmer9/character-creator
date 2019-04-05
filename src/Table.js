@@ -8,6 +8,14 @@ export default class Table extends Component {
   }
 
   componentDidMount(){
+    this.getCharacters()
+  }
+
+  componentDidUpdate(){
+    this.getCharacters()
+  }
+
+  getCharacters(){
     const url = "http://localhost:3000//api/v1/basics"
 
     fetch(url)
@@ -21,12 +29,11 @@ export default class Table extends Component {
     })
   }
 
-
   render () {
     const { characterData, removeCharacter, editCharacter } = this.props
     const { characters } = this.state
     return(
-      <table>
+      <table >
         <TableHeader />
         <TableBody
           characterData={characters}
