@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Table from './Table'
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
+import SimpleCharacterEditForm from './SimpleCharacterEditForm'
+
 import CharacterSkillsForm from './characterSkillsForm'
 
 
@@ -8,13 +10,20 @@ export default class App extends Component {
   state = {
     addForm: false,
     editForm: false,
-    character: [],
-    characters: []
+    character: []
   }
 
   addCharacter = () => {
     this.setState({
       addForm: true
+    })
+  }
+
+  editCharacter = index => {
+    console.log(index);
+    this.setState({
+      editForm: true,
+      character: index
     })
   }
 
@@ -61,7 +70,7 @@ export default class App extends Component {
       if (addForm === true){
           render = this.renderAddCharacter(characters)
         } else if (editForm === true) {
-          render = this.renderEditCharacterSKills(character)
+          render = this.renderEditCharacter(character)
         } else {
           render = this.renderWithOutForms(characters)
         }
@@ -82,6 +91,22 @@ export default class App extends Component {
           <button onClick={this.addCharacter}>Add Character</button>
         </div>
       )
+    }
+
+    renderEditCharacter(character){
+      return(
+        <div className="characterTable">
+            <Table
+              characterData={character}
+           />
+         <SimpleCharacterEditForm
+                character={character}
+                handleSubmit={this.handleEdit}
+            />
+          <button onClick={this.EditCharacter}>Edit Character</button>
+        </div>
+      )
+
     }
 
     renderEditCharacterSKills(character){

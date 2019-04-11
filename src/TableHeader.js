@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 const TableHeader = () => {
   return (
-    <center>
-    <thead>
+
+    <thead>  
       <tr style={{backgroundColor: "#FED896"}}>
         <th style={{columnWidth: "500px"}}>  Name </th>
         <th style={{columnWidth: "500px"}}>  Age  </th>
@@ -15,7 +15,6 @@ const TableHeader = () => {
         <th style={{columnWidth: "500px"}}></th>
       </tr>
     </thead>
-    </center>
   )
 }
 

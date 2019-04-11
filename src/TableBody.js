@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 
 const TableBody = props => {
-  const rows = props.characterData.map((row, index) => {
+  const characters = props.characterData.map((character, index) => {
     return(
-      <center>
-      <tr key={index} style={{backgroundColor: "#FED896"}}>
-        <td style={{columnWidth: "500px"}}>{row.name}</td>
-        <td style={{columnWidth: "500px"}}>{row.age}</td>
-        <td style={{columnWidth: "500px"}}>{row.race}</td>
-        <td style={{columnWidth: "500px"}}>{row.classs}</td>
-        <td style={{columnWidth: "500px"}}>{row.sex}</td>
-        <td style={{columnWidth: "500px"}}>{row.height}</td>
-        <td style={{columnWidth: "500px"}}><button onClick={() => props.removeCharacter(row.id)}>Delete</button>
-        </td>
-        <td style={{columnWidth: "500px"}}><button onClick={() => props.editCharacter(index)}>Edit</button>
-        </td>
+        <tr key={index} style={{backgroundColor: "#FED896"}}>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.name}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.age}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.race}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.classs}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.sex}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}>{character.height}</td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}><button onClick={() => props.removeCharacter(character.id)}>Delete</button>
+          </td>
+          <td style={{columnWidth: "500px"}}><button onClick={() => props.editCharacter(character)}>Edit</button>
+          </td>
       </tr>
-      </center>
     )
   })
   return (
-    <tbody>{rows}</tbody>
+    <tbody>{characters}</tbody>
   )
 }
 
