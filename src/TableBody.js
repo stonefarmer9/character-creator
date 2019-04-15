@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const TableBody = props => {
   const characters = props.characterData.map((character, index) => {
     return(
-        <tr key={index} style={{backgroundColor: "#FED896"}}>
+        <tr key={index}>
           <td style={{columnWidth: "500px", textAlign: "center"}}>{character.name}</td>
           <td style={{columnWidth: "500px", textAlign: "center"}}>{character.age}</td>
           <td style={{columnWidth: "500px", textAlign: "center"}}>{character.race}</td>

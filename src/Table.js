@@ -46,11 +46,11 @@ export default class Table extends Component {
 }
 
   render () {
-    const { characterData, editCharacter } = this.props
+    const { editCharacter } = this.props
     const { characters } = this.state
     return(
       <table >
-        <TableHeader />
+        <TableHeader/>
         <TableBody
           characterData={characters}
           removeCharacter={this.removeCharacter}

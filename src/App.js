@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Table from './Table';
 import Forms from './Forms';
+import Background from './images/parchment.png'
 
+var sectionStyle = {
+  backgroundImage: `url(${Background})`,
+  backgroundSize: '100% 100%'
+};
 
 export default class App extends Component {
   state = {
@@ -34,32 +39,31 @@ export default class App extends Component {
     })
   }
 
-    render() {
-      const {characters, addForm, editForm, character, form} = this.state;
-      let render;
-      if (addForm === true || editForm === true){
-        render = <Forms
-                  clearState={this.clearState}
-                  form={form}
-                  character={character}
-                  />
-      }
-      return  (
-        <div className="characterTable" style={{backgroundColor: '#BADEFE'}}>
-          <center>
+  render() {
+    const {characters, addForm, editForm, character, form} = this.state;
+    let render;
+    if (addForm === true || editForm === true){
+      render = <Forms
+                clearState={this.clearState}
+                form={form}
+                character={character}
+                />
+    }
+    return  (
+      <div className="characterTable" style={ sectionStyle }>
+        <center>
+          <h1 style={{ color: '#b3b3b3' }}> Character control </h1>
             <Table
               characterData={characters}
               removeCharacter = {this.removeCharacter}
               editCharacter={this.editCharacter}
-           />
-         <center>
-          <button onClick={this.addCharacter}>Add Character</button>
-          </center>
-          <div className="forms">
-            {render}
-          </div>
-          </center>
+              />
+        <button onClick={this.addCharacter}>Add Character</button>
+        <div className="forms">
+          { render }
         </div>
-      )
-    }
+        </center>
+      </div>
+    )
+  }
 }
