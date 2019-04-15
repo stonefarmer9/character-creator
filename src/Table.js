@@ -29,15 +29,31 @@ export default class Table extends Component {
     })
   }
 
+  removeCharacter = index => {
+
+    const url = `http://localhost:3000//api/v1/basics/${index}`
+
+    fetch(url,{
+      method: 'DELETE'
+  })
+  .then((response) => {
+    return response.json()
+  })
+  .then((response) => {
+   this.setState({})
+  })
+  .catch(error => console.error('Error:', error));
+}
+
   render () {
-    const { characterData, removeCharacter, editCharacter } = this.props
+    const { characterData, editCharacter } = this.props
     const { characters } = this.state
     return(
       <table >
         <TableHeader />
         <TableBody
           characterData={characters}
-          removeCharacter={removeCharacter}
+          removeCharacter={this.removeCharacter}
           editCharacter={editCharacter}
           />
       </table>

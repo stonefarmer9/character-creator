@@ -7,7 +7,7 @@ export default class App extends Component {
   state = {
     addForm: false,
     editForm: false,
-    character: [],
+    character: '',
     form: ''
   }
 
@@ -34,23 +34,6 @@ export default class App extends Component {
     })
   }
 
-  removeCharacter = index => {
-
-    const url = `http://localhost:3000//api/v1/basics/${index}`
-
-    fetch(url,{
-      method: 'DELETE'
-  })
-  .then((response) => {
-    return response.json()
-  })
-  .then((response) => {
-   this.setState({})
-  })
-  .catch(error => console.error('Error:', error));
-}
-
-
     render() {
       const {characters, addForm, editForm, character, form} = this.state;
       let render;
@@ -61,7 +44,9 @@ export default class App extends Component {
                   character={character}
                   />
       }
-      return  (<div className="characterTable" style={{backgroundColor: '#BADEFE'}}>
+      return  (
+        <div className="characterTable" style={{backgroundColor: '#BADEFE'}}>
+          <center>
             <Table
               characterData={characters}
               removeCharacter = {this.removeCharacter}
@@ -73,6 +58,7 @@ export default class App extends Component {
           <div className="forms">
             {render}
           </div>
+          </center>
         </div>
       )
     }
