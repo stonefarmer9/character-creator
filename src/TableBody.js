@@ -12,7 +12,7 @@ const TableBody = props => {
           <td style={{columnWidth: "500px", textAlign: "center"}}>{character.height}</td>
           <td style={{columnWidth: "500px", textAlign: "center"}}><button onClick={() => props.removeCharacter(character.id)}>Delete</button>
           </td>
-          <td style={{columnWidth: "500px"}}><button onClick={() => props.editCharacter(character)}>Edit</button>
+          <td style={{columnWidth: "500px", textAlign: "center"}}><button onClick={() => props.editCharacter(character)}>Edit</button>
           </td>
       </tr>
     )
