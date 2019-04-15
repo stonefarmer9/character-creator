@@ -14,6 +14,9 @@ const TableBody = props => {
           </td>
           <td style={{columnWidth: "500px", textAlign: "center"}}><button onClick={() => props.editCharacter(character)}>Edit</button>
           </td>
+          <td style={{columnWidth: "500px", textAlign: "center"}}><button onClick={() => props.addSkills(character)}>Add Skills</button>
+          </td>
+
       </tr>
     )
   })

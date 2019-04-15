@@ -85,7 +85,6 @@ export default class Forms extends Component {
       return (
         <div className="forms">
           { form }
-          <h1>Hello world</h1>
         </div>
       )
     }

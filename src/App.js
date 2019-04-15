@@ -32,6 +32,13 @@ export default class App extends Component {
     })
   }
 
+  addSkills = index => {
+    this.setState({
+      skillsForm:true,
+      character: index
+    })
+  }
+
   clearState = () => {
     this.setState({
       editForm: false,
@@ -57,6 +64,7 @@ export default class App extends Component {
               characterData={characters}
               removeCharacter = {this.removeCharacter}
               editCharacter={this.editCharacter}
+              addSkills={this.addSkills}
               />
         <center>
           <button onClick={this.addCharacter}>Add Character</button>
