@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import Table from './Table'
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
@@ -64,6 +65,28 @@ export default class App extends Component {
      })
    }
 
+   handleEdit = (character) => {
+     console.log(character);
+     const url = `http://localhost:3000//api/v1/basics/${character.id}`
+     const body = JSON.stringify(
+      { name: character.name,
+        age: character.age,
+        sex: character.sex,
+        classs: character.classs,
+        race: character.race,
+        height: character.height
+      })
+      fetch(url,{
+        method: 'PATCH',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: body
+      }).then((res) =>{
+        this.setState({editForm: false})
+      })
+    }
+
     render() {
       const {characters, addForm, editForm, character} = this.state;
       let render = ''
@@ -101,7 +124,7 @@ export default class App extends Component {
            />
          <SimpleCharacterEditForm
                 character={character}
-                handleSubmit={this.handleEdit}
+                handleEdit={this.handleEdit}
             />
           <button onClick={this.EditCharacter}>Edit Character</button>
         </div>

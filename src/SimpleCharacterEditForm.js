@@ -9,7 +9,8 @@ export default class SimpleCharacterEditForm extends Component {
       race: props.character.race,
       classs: props.character.classs,
       sex: props.character.sex,
-      height: props.character.height
+      height: props.character.height,
+      id: props.character.id
     }
 
     this.state = this.initialState;
@@ -23,10 +24,12 @@ export default class SimpleCharacterEditForm extends Component {
     })
   }
 
-
-
   submitForm = event => {
     event.preventDefault()
+
+    this.props.handleEdit(this.state);
+    this.setState(this.initialState);
+
   }
 
   render() {
