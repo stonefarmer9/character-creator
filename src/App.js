@@ -58,7 +58,9 @@ export default class App extends Component {
               removeCharacter = {this.removeCharacter}
               editCharacter={this.editCharacter}
               />
-        <button onClick={this.addCharacter}>Add Character</button>
+        <center>
+          <button onClick={this.addCharacter}>Add Character</button>
+        </center>
         <div className="forms">
           { render }
         </div>

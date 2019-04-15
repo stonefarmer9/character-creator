@@ -70,12 +70,13 @@ export default class Forms extends Component {
     }
 
     render(){
+      console.log(this.props);
       let form;
-      if (this.props.button === "add"){
+      if (this.props.form === "add"){
         form = <SimpleCharacterInfoForm
                    handleSubmit={this.handleSubmit}
                    />
-               } else if (this.props.button === "edit"){
+               } else if (this.props.form === "edit"){
         form = <SimpleCharacterEditForm
                   character={this.props.character}
                   handleEdit={this.handleEdit}
@@ -83,7 +84,8 @@ export default class Forms extends Component {
       }
       return (
         <div className="forms">
-          {form}
+          { form }
+          <h1>Hello world</h1>
         </div>
       )
     }
