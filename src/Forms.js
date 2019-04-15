@@ -70,13 +70,12 @@ export default class Forms extends Component {
     }
 
     render(){
-      const button = this.props.form
       let form;
-      if (button === "add"){
+      if (this.props.button === "add"){
         form = <SimpleCharacterInfoForm
                    handleSubmit={this.handleSubmit}
                    />
-      } else if (button === "edit"){
+               } else if (this.props.button === "edit"){
         form = <SimpleCharacterEditForm
                   character={this.props.character}
                   handleEdit={this.handleEdit}
