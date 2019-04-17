@@ -26,7 +26,6 @@ export default class SimpleCharacterEditForm extends Component {
 
   submitForm = event => {
     event.preventDefault()
-
     this.props.handleEdit(this.state);
     this.setState(this.initialState);
 

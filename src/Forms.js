@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
 import SimpleCharacterEditForm from './SimpleCharacterEditForm'
-
+import CharacterSkillsForm from './characterSkillsForm'
 
 export default class Forms extends Component {
   constructor (props) {
     super(props);
-
-    this.initialState = {
-      name: '',
-      age: '',
-      race: '',
-      classs: '',
-      sex: '',
-      height: ''
-    }
-
-    this.state = this.initialState;
-  }
-
-  handleChange = event => {
-    const {name, value} = event.target;
-
-    this.setState({
-      [name] : value
-    })
   }
 
   handleSubmit = (character) => {
@@ -43,9 +24,7 @@ export default class Forms extends Component {
          'Content-Type': 'application/json'
        },
        body: body
-     }).then((res) =>{
-       this.props.clearState({addForm: false})
-     })
+     }).then((res) => { this.props.clearState({addForm: false})})
    }
 
    handleEdit = (character) => {
@@ -69,8 +48,31 @@ export default class Forms extends Component {
       })
     }
 
+    handleSkills = (character) => {
+      console.log(character, character.basic_id);
+      const url = "http://localhost:3000//api/v1/skills"
+      const body = JSON.stringify({
+        strength: character.strength,
+        dexterity: character.dexterity,
+        constitution: character.constitution,
+        intelligence: character.intelligence,
+        wisdom: character.wisdom,
+        charisma: character.charisma,
+        basic_id: character.basic_id
+      })
+      fetch(url, {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: body
+      }).then((res) =>{
+        this.props.clearState()
+      })
+
+    }
+
     render(){
-      console.log(this.props);
       let form;
       if (this.props.form === "add"){
         form = <SimpleCharacterInfoForm
@@ -81,7 +83,12 @@ export default class Forms extends Component {
                   character={this.props.character}
                   handleEdit={this.handleEdit}
                   />
-      }
+              } else if (this.props.form === "skills"){
+                form = <CharacterSkillsForm
+                  character={ this.props.character }
+                  handleSkills= { this.handleSkills }
+                />
+              }
       return (
         <div className="forms">
           { form }

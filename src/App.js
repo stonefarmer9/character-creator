@@ -12,6 +12,7 @@ export default class App extends Component {
   state = {
     addForm: false,
     editForm: false,
+    skillsForm: false,
     character: '',
     form: ''
   }
@@ -34,7 +35,8 @@ export default class App extends Component {
 
   addSkills = index => {
     this.setState({
-      skillsForm:true,
+      skillsForm: true,
+      form: "skills",
       character: index
     })
   }
@@ -42,14 +44,15 @@ export default class App extends Component {
   clearState = () => {
     this.setState({
       editForm: false,
-      addForm: false
+      addForm: false,
+      skillsForm: false,
     })
   }
 
   render() {
-    const {characters, addForm, editForm, character, form} = this.state;
+    const {characters, addForm, editForm, skillsForm, character, form} = this.state;
     let render;
-    if (addForm === true || editForm === true){
+    if (addForm === true || editForm === true || skillsForm === true){
       render = <Forms
                 clearState={this.clearState}
                 form={form}

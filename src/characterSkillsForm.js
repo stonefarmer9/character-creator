@@ -9,7 +9,8 @@ export default class CharacterSkillsForm extends Component {
       constitution: '',
       charisma: '',
       intelligence: '',
-      wisdom: ''
+      wisdom: '',
+      basic_id: this.props.character.id
     }
 
     this.state = this.initialState;
@@ -24,11 +25,9 @@ export default class CharacterSkillsForm extends Component {
   }
 
   submitForm = event => {
-    const stats = this.state
     event.preventDefault()
-    const character = {...this.props.character, ...stats}
-    this.props.handleEdit(character);
-    this.setState(this.initialState);
+    this.props.handleSkills(this.state)
+    this.setState(this.initialState)
   }
 
   render() {
