@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
 import SimpleCharacterEditForm from './SimpleCharacterEditForm'
 import CharacterSkillsForm from './characterSkillsForm'
+var modify = require('./scripts/modifiers')
+
 
 export default class Forms extends Component {
   constructor (props) {
@@ -49,7 +51,7 @@ export default class Forms extends Component {
     }
 
     handleSkills = (character) => {
-      console.log(character, character.basic_id);
+      console.log(modify.modifier(character.strength));
       const url = "http://localhost:3000//api/v1/skills"
       const body = JSON.stringify({
         strength: character.strength,
