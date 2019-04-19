@@ -9,18 +9,25 @@ var sectionStyle = {
 };
 
 export default class App extends Component {
-  state = {
-    addForm: false,
-    editForm: false,
-    skillsForm: false,
-    character: '',
-    form: '',
-    characters: []
+  constructor(props){
+    super(props)
+    this.state = {
+      addForm: false,
+      editForm: false,
+      skillsForm: false,
+      character: '',
+      form: '',
+      characters: []
+    }
+    this.clearState = this.clearState.bind(this)
+    this.getCharacters = this.getCharacters.bind(this)
   }
 
 
   componentDidMount(){
+    console.log("Did mount running...");
     this.getCharacters()
+    console.log("finished in fxn");
   }
 
   getCharacters(){

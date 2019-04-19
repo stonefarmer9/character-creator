@@ -13,16 +13,11 @@ export default class Table extends Component {
       method: 'DELETE'
   })
   .then((response) => {
-    return response.json()
+    this.props.getCharacters()
   })
-  .then((response) => {
-   this.props.getCharacters()
-  })
-  .catch(error => console.error('Error:', error));
 }
 
   render () {
-    console.log(this.props.characterData);
 
     return(
       <table >

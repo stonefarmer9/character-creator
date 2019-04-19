@@ -27,7 +27,7 @@ export default class Forms extends Component {
        },
        body: body
      }).then((res) => {
-       this.props.clearState({addForm: false})
+       this.props.clearState()
        this.props.getCharacters()
      })
    }
