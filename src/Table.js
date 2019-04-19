@@ -26,6 +26,7 @@ export default class Table extends Component {
           removeCharacter={this.removeCharacter}
           editCharacter={this.props.editCharacter}
           addSkills={this.props.addSkills}
+          viewCharacter={this.props.viewCharacter}
           />
       </table>
     )

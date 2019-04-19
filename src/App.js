@@ -66,11 +66,19 @@ export default class App extends Component {
     })
   }
 
+  viewCharacter = index => {
+    this.setState({
+      characterSheet: true,
+      character: index
+    })
+  }
+
   clearState = () => {
     this.setState({
       editForm: false,
       addForm: false,
       skillsForm: false,
+      characterSheet: false,
     })
   }
 
@@ -95,6 +103,7 @@ export default class App extends Component {
               editCharacter={this.editCharacter}
               addSkills={this.addSkills}
               getCharacters={this.getCharacters}
+              viewCharacter={this.viewCharacter}
               />
         <center>
           <button onClick={this.addCharacter}>Add Character</button>
