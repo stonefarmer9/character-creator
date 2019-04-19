@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from './Table';
 import Forms from './Forms';
+import CharacterSheet from './characterSheet'
 import Background from './images/parchment.png'
 
 var sectionStyle = {
@@ -83,7 +84,7 @@ export default class App extends Component {
   }
 
   render() {
-    const {characters, addForm, editForm, skillsForm, character, form} = this.state;
+    const {characters, addForm, editForm, skillsForm, character, form, characterSheet} = this.state;
     let render;
     if (addForm === true || editForm === true || skillsForm === true){
       render = <Forms
@@ -92,7 +93,11 @@ export default class App extends Component {
                 character={character}
                 getCharacters={this.getCharacters}
                 />
-    }
+            } else if (characterSheet === true){
+              render = <CharacterSheet
+                        character={character}/>
+
+            }
     return  (
       <div className="characterTable" style={ sectionStyle }>
         <center>
