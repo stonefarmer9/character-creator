@@ -14,7 +14,29 @@ export default class App extends Component {
     editForm: false,
     skillsForm: false,
     character: '',
-    form: ''
+    form: '',
+    characters: []
+  }
+
+
+  componentDidMount(){
+    this.getCharacters()
+  }
+
+  getCharacters(){
+    console.log("get characters");
+    const url = "http://localhost:3000//api/v1/basics"
+
+    fetch(url)
+    .then((response) => {
+      return response.json()
+    })
+    .then((response) => {
+      this.setState({
+        characters: response
+      })
+      console.log("got characters");
+    })
   }
 
   addCharacter = () => {
@@ -57,6 +79,7 @@ export default class App extends Component {
                 clearState={this.clearState}
                 form={form}
                 character={character}
+                getCharacters={this.getCharacters}
                 />
     }
     return  (
@@ -68,6 +91,7 @@ export default class App extends Component {
               removeCharacter = {this.removeCharacter}
               editCharacter={this.editCharacter}
               addSkills={this.addSkills}
+              getCharacters={this.getCharacters}
               />
         <center>
           <button onClick={this.addCharacter}>Add Character</button>

@@ -3,34 +3,10 @@ import TableHeader from './TableHeader'
 import TableBody from './TableBody'
 
 export default class Table extends Component {
-  state = {
-    characters: []
-  }
 
-  componentDidMount(){
-    this.getCharacters()
-  }
-
-  componentDidUpdate(){
-    this.getCharacters()
-  }
-
-  getCharacters(){
-    const url = "http://localhost:3000//api/v1/basics"
-
-    fetch(url)
-    .then((response) => {
-      return response.json()
-    })
-    .then((response) => {
-      this.setState({
-        characters: response
-      })
-    })
-  }
 
   removeCharacter = index => {
-
+    console.log("Got to removeCharacter");
     const url = `http://localhost:3000//api/v1/basics/${index}`
 
     fetch(url,{
@@ -40,23 +16,22 @@ export default class Table extends Component {
     return response.json()
   })
   .then((response) => {
-   this.setState({})
+   this.props.getCharacters()
   })
   .catch(error => console.error('Error:', error));
 }
 
   render () {
-    const { editCharacter } = this.props
-    const { addSkills } = this.props
-    const { characters } = this.state
+    console.log(this.props.characterData);
+
     return(
       <table >
         <TableHeader/>
         <TableBody
-          characterData={characters}
+          characterData={this.props.characterData}
           removeCharacter={this.removeCharacter}
-          editCharacter={editCharacter}
-          addSkills={addSkills}
+          editCharacter={this.props.editCharacter}
+          addSkills={this.props.addSkills}
           />
       </table>
     )

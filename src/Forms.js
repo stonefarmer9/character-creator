@@ -12,7 +12,7 @@ export default class Forms extends Component {
 
   handleSubmit = (character) => {
     const url = "http://localhost:3000//api/v1/basics"
-    const body = JSON.stringify(//can the below be replaced with this.state?
+    const body = JSON.stringify(
      { name: character.name,
        age: character.age,
        sex: character.sex,
@@ -26,7 +26,10 @@ export default class Forms extends Component {
          'Content-Type': 'application/json'
        },
        body: body
-     }).then((res) => { this.props.clearState({addForm: false})})
+     }).then((res) => {
+       this.props.clearState({addForm: false})
+       this.props.getCharacters()
+     })
    }
 
    handleEdit = (character) => {
