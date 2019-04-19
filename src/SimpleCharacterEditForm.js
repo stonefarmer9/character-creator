@@ -32,8 +32,6 @@ export default class SimpleCharacterEditForm extends Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.state);
     const { name, age, race, classs, sex, height} = this.state;
     return(
       <form>

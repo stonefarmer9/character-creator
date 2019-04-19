@@ -25,13 +25,10 @@ export default class App extends Component {
 
 
   componentDidMount(){
-    console.log("Did mount running...");
     this.getCharacters()
-    console.log("finished in fxn");
   }
 
   getCharacters(){
-    console.log("get characters");
     const url = "http://localhost:3000//api/v1/basics"
 
     fetch(url)
@@ -42,7 +39,6 @@ export default class App extends Component {
       this.setState({
         characters: response
       })
-      console.log("got characters");
     })
   }
 

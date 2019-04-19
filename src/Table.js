@@ -6,7 +6,6 @@ export default class Table extends Component {
 
 
   removeCharacter = index => {
-    console.log("Got to removeCharacter");
     const url = `http://localhost:3000//api/v1/basics/${index}`
 
     fetch(url,{

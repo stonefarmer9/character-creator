@@ -55,7 +55,6 @@ export default class Forms extends Component {
     }
 
     handleSkills = (character) => {
-      console.log(modify.modifier(character.strength));
       const url = "http://localhost:3000//api/v1/skills"
       const body = JSON.stringify({
         strength: character.strength,
