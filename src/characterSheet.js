@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import Background from './images/parchment.png'
 var modify = require('./scripts/modifiers')
+
+var sectionStyle = {
+  backgroundImage: `url(${Background})`,
+  backgroundSize: '100% 100%'
+};
 
 
 export default class characterSheet extends Component {
@@ -42,8 +48,8 @@ export default class characterSheet extends Component {
     const loading = <h2> loading ... </h2>
 
     return(
-      <div className="characterSheet">
-        <div className="basicsList">
+      <div className="characterSheet" style={ sectionStyle }>
+        <div className="basicsList" style={{ float:"left", backgroundImage: `url(${Background})`, backgroundSize: '100% 100%', width:"500px", height:"500px", marginTop:"20px", marginLeft:"200px"}}>
           <ul style={{ listStyleType: "none" }}>
             <li>{this.props.character.name}</li>
             <li>{this.props.character.age}</li>
@@ -53,12 +59,10 @@ export default class characterSheet extends Component {
             <li>{this.props.character.sex}</li>
           </ul>
         </div>
-          <div className="skillsList">
+          <div className="skillsList" style={{ float:"right", backgroundImage: `url(${Background})`, backgroundSize: '100% 100%', width:"500px", height:"500px", marginTop:"20px", marginRight:"200px", marginColor:"#0066ff"}}>
           {skills.length === 0 ? loading : skillList}
         </div>
-        <div>
           <button onClick={() => this.props.clearState()}>Close</button>
-        </div>
       </div>
     )
   }
