@@ -29,9 +29,8 @@ export default class characterSheet extends Component {
   render(){
 
     const { skills } = this.state;
-    console.log(skills);
     const skillList =
-     <ul>
+     <ul style={{ listStyleType: "none" }}>
        <li>{skills.strength}</li>
        <li>{skills.dexterity}</li>
        <li>{skills.constitution}</li>
@@ -42,11 +41,10 @@ export default class characterSheet extends Component {
 
     const loading = <h2> loading ... </h2>
 
-
     return(
       <div className="characterSheet">
         <div className="basicsList">
-          <ul>
+          <ul style={{ listStyleType: "none" }}>
             <li>{this.props.character.name}</li>
             <li>{this.props.character.age}</li>
             <li>{this.props.character.race}</li>
