@@ -56,6 +56,9 @@ export default class characterSheet extends Component {
           <div className="skillsList">
           {skills.length === 0 ? loading : skillList}
         </div>
+        <div>
+          <button onClick={() => this.props.clearState()}>Close</button>
+        </div>
       </div>
     )
   }

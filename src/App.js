@@ -95,7 +95,8 @@ export default class App extends Component {
                 />
             } else if (characterSheet === true){
               render = <CharacterSheet
-                        character={character}/>
+                        character={character}
+                        clearState={this.clearState}/>
 
             }
     return  (
