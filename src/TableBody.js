@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const TableBody = props => {
+
   const characters = props.characterData.map((character, index) => {
     return(
         <tr key={index}>
@@ -24,6 +25,7 @@ const TableBody = props => {
     )
   })
   return (
+
     <tbody>{characters}</tbody>
   )
 }

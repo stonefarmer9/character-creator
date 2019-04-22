@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SimpleCharacterInfoForm from './SimpleCharacterForm'
 import SimpleCharacterEditForm from './SimpleCharacterEditForm'
 import CharacterSkillsForm from './characterSkillsForm'
-var modify = require('./scripts/modifiers')
 
 
 export default class Forms extends Component {
