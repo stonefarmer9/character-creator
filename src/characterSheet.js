@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './characterSheet.css'
 import Background from './images/parchment.png'
 var modify = require('./scripts/modifiers')
 

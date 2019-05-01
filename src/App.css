@@ -1,35 +1,17 @@
 
 .App {
-  text-align: center;
-
+  background-image: url("./images/parchment.png");
+  background-size: 100% 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.addButton {
+  font-size: 1.3em;
+  font-family: 'Artifika', serif;
+  box-shadow: 0 18px 16px 0 rgba(0,0,0,0.2), 0 16px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 8px;
+  padding: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.addButton:hover {
+  background-color: #0033cc;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

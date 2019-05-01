@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 import Table from './Table';
 import Forms from './Forms';
 import CharacterSheet from './characterSheet'
@@ -100,7 +101,7 @@ export default class App extends Component {
 
             }
     return  (
-      <div className="characterTable" style={ sectionStyle }>
+      <div className="App">
         <center>
           <h1 style={{ color: '#b3b3b3' }}> Character control </h1>
             <Table
@@ -112,7 +113,7 @@ export default class App extends Component {
               viewCharacter={this.viewCharacter}
               />
         <center>
-          <button onClick={this.addCharacter}>Add Character</button>
+          <button className="addButton" onClick={this.addCharacter}>Add Character</button>
         </center>
         <div className="forms">
           { render }
