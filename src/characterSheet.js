@@ -3,12 +3,6 @@ import './characterSheet.css'
 import Background from './images/parchment.png'
 var modify = require('./scripts/modifiers')
 
-var sectionStyle = {
-  backgroundImage: `url(${Background})`,
-  backgroundSize: '100% 100%'
-};
-
-
 export default class characterSheet extends Component {
   constructor(props){
     super(props)
@@ -36,35 +30,58 @@ export default class characterSheet extends Component {
   render(){
 
     const { skills } = this.state;
-    const skillList =
-     <ul style={{ listStyleType: "none", fontSize:"35px" }}>
-       <li>Strength: {skills.strength} ||--||+{modify.modifier(skills.strength)}</li>
-       <li>Dexterity: {skills.dexterity} ||---||+{modify.modifier(skills.dexterity)}</li>
-       <li>Constitution: {skills.constitution} ||---||+{modify.modifier(skills.constitution)}</li>
-       <li>Intelligence: {skills.intelligence} ||---||+{modify.modifier(skills.intelligence)}</li>
-       <li>Wisdom: {skills.wisdom} ||---||+{modify.modifier(skills.wisdom)}</li>
-       <li>Chasrisma: {skills.charisma} ||---||+{modify.modifier(skills.charisma)}</li>
-     </ul>;
 
     const loading = <h2> loading ... </h2>
 
     return(
-      <div className="characterSheet" style={ sectionStyle }>
-        <div className="basicsList" style={{ float:"left", backgroundImage: `url(${Background})`, backgroundSize: '100% 100%', width:"500px", height:"500px", marginTop:"20px", marginLeft:"200px"}}>
-          <ul style={{ listStyleType: "none", fontSize:"45px" }}>
-            <li>Name: {this.props.character.name}</li>
-            <li>Age: {this.props.character.age}</li>
-            <li>Race: {this.props.character.race}</li>
-            <li>Class: {this.props.character.classs}</li>
-            <li>Height: {this.props.character.height}</li>
-            <li>Sex: {this.props.character.sex}</li>
-          </ul>
+      <div className="container">
+        <br></br>
+        <br></br>
+        <div className="basicsList">
+            <p className="charName">
+              Name: {this.props.character.name}
+            </p>
+            <p className="charAge">
+              Age: {this.props.character.age}
+            </p>
+            <p className="charRace">
+              Race: {this.props.character.race}
+            </p>
+            <p className="charClass">
+              Class: {this.props.character.classs}
+            </p>
+            <p className="charHeight">
+              Height: {this.props.character.height}
+            </p>
+            <p className="charSex">
+              Sex: {this.props.character.sex}
+            </p>
+          </div>
+          <div className="skillsList">
+            <div className="charSkill">
+              Strength: {skills.strength} <br></br> +{modify.modifier(skills.strength)}
+            </div>
+            <div className="charSkill">
+              Dexterity: {skills.dexterity} <br></br> +{modify.modifier(skills.dexterity)}
+            </div>
+            <div className="charSkill">
+              Constitution: {skills.constitution} <br></br> +{modify.modifier(skills.constitution)}
+            </div>
+            <div className="charSkill">
+              Intelligence: {skills.intelligence} <br></br> +{modify.modifier(skills.intelligence)}
+            </div>
+            <div className="charSkill">
+              Wisdom: {skills.wisdom} <br></br> +{modify.modifier(skills.wisdom)}
+            </div>
+            <div className="charSkill">
+              Chasrisma: {skills.charisma} <br></br> +{modify.modifier(skills.charisma)}
+            </div>
+
         </div>
-          <div className="skillsList" style={{ float:"right", backgroundImage: `url(${Background})`, backgroundSize: '100% 100%', width:"500px", height:"500px", marginTop:"20px", marginRight:"200px", marginColor:"#0066ff"}}>
-          {skills.length === 0 ? loading : skillList}
-        </div>
+        <div className="closeButton">
           <button onClick={() => this.props.clearState()}>Close</button>
-      </div>
+        </div>
+    </div>
     )
   }
 }
