@@ -58,28 +58,30 @@ export default class characterSheet extends Component {
             </p>
           </div>
           <div className="skillsList">
-            <div className="charSkill">
+            <div className="strength">
               Strength: {skills.strength} <br></br> +{modify.modifier(skills.strength)}
             </div>
-            <div className="charSkill">
+            <div className="dexterity">
               Dexterity: {skills.dexterity} <br></br> +{modify.modifier(skills.dexterity)}
             </div>
-            <div className="charSkill">
+            <div className="constitution">
               Constitution: {skills.constitution} <br></br> +{modify.modifier(skills.constitution)}
             </div>
-            <div className="charSkill">
+            <div className="intelligence">
               Intelligence: {skills.intelligence} <br></br> +{modify.modifier(skills.intelligence)}
             </div>
-            <div className="charSkill">
+            <div className="wisdom">
               Wisdom: {skills.wisdom} <br></br> +{modify.modifier(skills.wisdom)}
             </div>
-            <div className="charSkill">
+            <div className="charisma">
               Chasrisma: {skills.charisma} <br></br> +{modify.modifier(skills.charisma)}
             </div>
 
         </div>
-        <div className="closeButton">
-          <button onClick={() => this.props.clearState()}>Close</button>
+        <div className="buttons">
+          <br></br>
+          <button className="closeButton" onClick={() => this.props.clearState()}>Close</button>
+          <button className="inventory">Inventory</button>
         </div>
     </div>
     )

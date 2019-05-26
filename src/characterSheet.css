@@ -2,7 +2,7 @@
 
 .container {
   display: grid;
-  grid-template-columns:[one] 40px [two] 50px [three] auto [four] 50px [five] 40px [end];
+  grid-template-columns:[one] auto [two] auto [three] auto [four] auto [five] auto [end];
   grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
   background-image: url("./images/parchment.png");
   background-size: 100% 100%;
@@ -20,12 +20,6 @@
 
 }
 
-.skillsList {
-  grid-column-start: two;
-  grid-column-end: three;
-  grid-row-start: third-line;
-  grid-row-end: third-line;
-}
 
 .charName {
   grid-column-start: two;
@@ -157,7 +151,23 @@
   font-family: 'Artifika', serif;
 }
 
-.charSkill {
+.skillsList {
+  width: 50%;
+  grid-column-start: two;
+  grid-column-end: two;
+  grid-row-start: row1-end;
+  grid-row-end: third-line;
+  display: grid;
+  grid-template-columns:[one] auto [two] auto [three] auto [four] auto [five] auto [end];
+  grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto [row5] auto [row6] auto;
+}
+
+.strength {
+  grid-column-start: one;
+  grid-column-end: two;
+  grid-row-start: row1;
+  grid-row-end: row1;
+
   border-style: solid;
   border-color:  #000066;
   border-width: 3px;
@@ -165,9 +175,140 @@
 
   background-color: black;
 
-  width:135px;
+  width:175px;
   font-size: 1.5em;
   font-family: 'Artifika', serif;
   color: #ffffff
 
+}
+
+.dexterity {
+  grid-column-start: two;
+  grid-column-end: three;
+  grid-row-start: row1;
+  grid-row-end: row1;
+
+  border-style: solid;
+  border-color:  #000066;
+  border-width: 3px;
+  border-radius: 8px;
+
+  background-color: black;
+
+  width:175px;
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  color: #ffffff
+
+}
+
+.constitution {
+  grid-column-start: three;
+  grid-column-end: four;
+  grid-row-start: row1;
+  grid-row-end: row1;
+
+  border-style: solid;
+  border-color:  #000066;
+  border-width: 3px;
+  border-radius: 8px;
+
+  background-color: black;
+
+  width:175px;
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  color: #ffffff
+
+}
+
+.intelligence {
+  grid-column-start: one;
+  grid-column-end: two;
+  grid-row-start: row2;
+  grid-row-end: row2;
+
+  border-style: solid;
+  border-color:  #000066;
+  border-width: 3px;
+  border-radius: 8px;
+
+  background-color: black;
+
+  width:175px;
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  color: #ffffff
+
+}
+
+.wisdom {
+  grid-column-start: two;
+  grid-column-end: three;
+  grid-row-start: row2;
+  grid-row-end: row2;
+
+  border-style: solid;
+  border-color:  #000066;
+  border-width: 3px;
+  border-radius: 8px;
+
+  background-color: black;
+
+  width:175px;
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  color: #ffffff
+
+}
+
+.charisma {
+  grid-column-start: three;
+  grid-column-end: four;
+  grid-row-start: row2;
+  grid-row-end: row2;
+
+  border-style: solid;
+  border-color:  #000066;
+  border-width: 3px;
+  border-radius: 8px;
+
+  background-color: black;
+
+  width:175px;
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  color: #ffffff
+
+}
+
+.closeButton{
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  box-shadow: 0 18px 16px 0 rgba(0,0,0,0.2), 0 16px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 8px;
+  padding: 5px;
+}
+.closeButton:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.inventory{
+  font-size: 1.5em;
+  font-family: 'Artifika', serif;
+  box-shadow: 0 18px 16px 0 rgba(0,0,0,0.2), 0 16px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 8px;
+  padding: 5px;
+}
+.inventory:hover {
+  background-color: green;
+  color: white;
+}
+
+.buttons {
+  grid-column-start: two;
+  grid-column-end: three;
+  grid-row-start: row1;
+  grid-row-end: row1-end;
 }
