@@ -13,9 +13,9 @@ export default class characterSheet extends Component {
     }
   }
 
-  showInventory = () => {
+  showInventory = (boolean) => {
     this.setState({
-      inventory: true,
+      inventory: boolean
     })
   }
 
@@ -41,9 +41,12 @@ export default class characterSheet extends Component {
 
     const loading = <h2> loading ... </h2>
 
-    var showInventory;
+    var renderInventory;
 
-    if (inventory === true) {showInventory = <Inventory/>}
+    if (inventory === true) {renderInventory = <Inventory
+                                              showInventory={this.showInventory}
+                                              />
+                                          }
 
     return(
       <div className="container">
@@ -93,10 +96,10 @@ export default class characterSheet extends Component {
         <div className="buttons">
           <br></br>
           <button className="closeButton" onClick={() => this.props.clearState()}>Close</button>
-          <button className="inventorybutton" onClick={() => this.showInventory()}>Inventory</button>
+          <button className="inventorybutton" onClick={() => this.showInventory(true)}>Inventory</button>
         </div>
         <div className="inventory">
-          {showInventory}
+          {renderInventory}
         </div>
     </div>
     )

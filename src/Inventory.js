@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './inventory.css'
 
 export default class Inventory extends Component {
   constructor(props){
@@ -33,10 +34,10 @@ export default class Inventory extends Component {
     const list = inventory.map(function(item){
       return (
         <ul className="inventory">
-          <li>{item.name}</li>
-          <li>{item.value}</li>
-          <li>{item.weight}</li>
-          <li>{item.rarity}</li>
+          <li className="item">Item:{item.name}</li>
+          <li className="item">Value:{item.value}gp</li>
+          <li className="item">Weight:{item.weight}lb</li>
+          <li className="item">Rarity:{item.rarity}</li>
         </ul>
       )
     })
@@ -44,6 +45,7 @@ export default class Inventory extends Component {
     return(
       <div>
       {list}
+      <button className="closeButton" onClick={()=> this.props.showInventory(false)}>Close</button>
       </div>
     )
   }
