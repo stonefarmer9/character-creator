@@ -1,4 +1,4 @@
-#Charactor Creator
+# Charactor Creator
 
 ## Requirements
 
@@ -35,7 +35,7 @@
 
 - Currently a user can add a character and its basic info and skills.
 - The Database is not a deployed nor continually live please visit its repo [here, sorry no readme, just download and run rails s](https://github.com/stonefarmer9/characters-api)
-- Once thats running you can save characters and enjoy the current working progress of the app. 
+- Once thats running you can save characters and enjoy the current working progress of the app.
 
 ## Description
 
