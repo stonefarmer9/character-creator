@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Inventory from './Inventory'
 import './characterSheet.css'
 import Background from './images/parchment.png'
 var modify = require('./scripts/modifiers')
@@ -7,8 +8,15 @@ export default class characterSheet extends Component {
   constructor(props){
     super(props)
     this.state = {
-      skills: []
+      skills: [],
+      inventory: false,
     }
+  }
+
+  showInventory = () => {
+    this.setState({
+      inventory: true,
+    })
   }
 
   componentDidMount(){
@@ -29,9 +37,13 @@ export default class characterSheet extends Component {
 
   render(){
 
-    const { skills } = this.state;
+    const { skills, inventory } = this.state;
 
     const loading = <h2> loading ... </h2>
+
+    var showInventory;
+
+    if (inventory === true) {showInventory = <Inventory/>}
 
     return(
       <div className="container">
@@ -81,7 +93,10 @@ export default class characterSheet extends Component {
         <div className="buttons">
           <br></br>
           <button className="closeButton" onClick={() => this.props.clearState()}>Close</button>
-          <button className="inventory">Inventory</button>
+          <button className="inventorybutton" onClick={() => this.showInventory()}>Inventory</button>
+        </div>
+        <div className="inventory">
+          {showInventory}
         </div>
     </div>
     )

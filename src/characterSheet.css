@@ -4,8 +4,15 @@
   display: grid;
   grid-template-columns:[one] auto [two] auto [three] auto [four] auto [five] auto [end];
   grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
-  background-image: url("./images/parchment.png");
+  background-color: url("./images/parchment.png");
   background-size: 100% 100%;
+}
+
+.inventory {
+  grid-column-start: one;
+  grid-column-end: two;
+  grid-row-start: row1-end;
+  grid-row-end: third-line;
 }
 
 .basicsList {
@@ -294,14 +301,14 @@
   color: white;
 }
 
-.inventory{
+.inventorybutton{
   font-size: 1.5em;
   font-family: 'Artifika', serif;
   box-shadow: 0 18px 16px 0 rgba(0,0,0,0.2), 0 16px 20px 0 rgba(0,0,0,0.19);
   border-radius: 8px;
   padding: 5px;
 }
-.inventory:hover {
+.inventorybutton:hover {
   background-color: green;
   color: white;
 }
@@ -310,5 +317,5 @@
   grid-column-start: two;
   grid-column-end: three;
   grid-row-start: row1;
-  grid-row-end: row1-end;
+  grid-row-end: row1;
 }
