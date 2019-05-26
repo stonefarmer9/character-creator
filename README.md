@@ -81,8 +81,7 @@ Due to the nature of this project this will be kept updated with what is the nex
  - Style the ever-loving-shit out of it.
 
 ## Contributing
-
-    Feel free to help a brother out, clone this repo and submit a pull request and I shall endeavour to google how to deal with that situation.
+  Feel free to help a brother out, clone this repo and submit a pull request and I shall endeavour to google how to deal with that situation.
 
 ## Author
 
