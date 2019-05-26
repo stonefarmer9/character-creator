@@ -103,7 +103,8 @@ export default class App extends Component {
     return  (
       <div className="App">
         <center>
-          <h1 style={{ color: '#b3b3b3' }}> Character control </h1>
+          <br></br>
+          <br></br>
             <Table
               characterData={characters}
               removeCharacter = {this.removeCharacter}

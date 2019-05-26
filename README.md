@@ -17,15 +17,73 @@
 - DM's & Players need access to to all rules.
 
 
-## Tech Stack
+## Dependancies
 
 - React front end
-- Ruby Back end (maybe rails....)
-- Cypress to test React front
-- Jest to test React Back - Maybe?
-- Travis
-- Heroku - continuous deployment
+- Ruby  on Rails Back end
 - CSS - styling
-- ESlint 
 
-## User Stories
+
+## Get Started
+
+```
+- Clone or download this repo
+- Run npm install to ensure all Dependancies are installed.
+- run npm start and visit localhost:3000
+```
+## Using the App Currently
+
+- Currently a user can add a character and its basic info and skills.
+- The Database is not a deployed nor continually live please visit its repo [here, sorry no readme, just download and run rails s](https://github.com/stonefarmer9/characters-api)
+- Once thats running you can save characters and enjoy the current working progress of the app. 
+
+## Description
+
+An app designed to be used to manage games of dungeons & dragons or other role-playing games. Currently able to create a character and load there sheet with information.
+
+## Approach
+
+This project was approached as the first personal project I carried out having finished makers. A large project I have started with the starting point for a player, building a character.
+
+The project was not test driven, sacrificing test-driven control for learning React and its many applications. This approach was also taken as I was unsure of what to expect when working with the new library and wanted to worry about learning what React can do before learning how to test that it does what I expect.
+
+
+## Component Break Down
+
+ - App - Main page User visits on entry, shows them a table of their current characters. Retrieves data from rails API.
+
+ - Simple character form - takes basic name, age, height, race, class and sex information needed for a character. Sends request to railsAPI to store the info.
+ - Simple character edit form - Same as above but for editing that information.
+
+ - Table header/body - responsible for fetching character data and rendering it as a table with buttons to change APPs state.
+
+ - Inventory - Listing component for showing inventory (Work in progress)
+
+ - Character skills form - takes the characters skills value and returns it plus the modifier applied to the character using the modifiers scrips in scripts directory. Also sends request to RAILS API to save skills.
+
+ - Forms - a controller for add/edit skill and character forms.
+
+ - Character sheet - pulls all info from above together and can display the data as needed through user interface.
+
+## Work to be done
+
+
+Due to the nature of this project this will be kept updated with what is the next step for me to complete.
+
+ - Inventory - Add items to the inventory array in state.
+
+ - Add Inventory to Rails API associated to character
+
+ - Remove hardcoded values.
+
+ - Connect to DnD API (yay its finally here!!!) and retrieve items data, structure and display it so add list can be a tick section not text box input.
+
+ - Style the ever-loving-shit out of it.
+
+## Contributing
+
+    Feel free to help a brother out, clone this repo and submit a pull request and I shall endeavour to google how to deal with that situation.
+
+## Author
+
+Georges Le Vaillant
