@@ -97,6 +97,8 @@ export default class characterSheet extends Component {
           <br></br>
           <button className="closeButton" onClick={() => this.props.clearState()}>Close</button>
           <button className="inventorybutton" onClick={() => this.showInventory(true)}>Inventory</button>
+          <button className="spellsbutton">Spells</button>
+          <button className="weaponsbutton">Weapons</button>
         </div>
         <div className="inventory">
           {renderInventory}
