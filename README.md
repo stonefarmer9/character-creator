@@ -50,7 +50,7 @@ The project was not test driven, sacrificing test-driven control for learning Re
 
 ## App Models
 
-[Component Tree](https://drive.google.com/open?id=1DkufOEr7-kdcP0NUH3Qx0M2rkCyAGSV-)
+![Component Tree](https://drive.google.com/open?id=1DkufOEr7-kdcP0NUH3Qx0M2rkCyAGSV-)
 
 
 ## Component Break Down
