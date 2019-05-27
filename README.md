@@ -86,3 +86,14 @@ Due to the nature of this project this will be kept updated with what is the nex
 ## Author
 
 Georges Le Vaillant
+
+## Learnings
+
+This section began on 27/05/2019 and will account for important learnings since then.
+
+  - Use if JSX fragments
+  - Making a scrollable component
+  - Managing whitespace provided by .map for JSX returns
+  - CSS grid usage and deployment
+  - Can view the designed grid through dev tools
+  
