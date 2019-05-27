@@ -19,20 +19,6 @@ export default class Inventory extends Component {
     }
   }
 
-  // componentDidMount(){
-  //   const id = this.props.character.id
-  //   const url = `http://localhost:3000//api/v1/inventory/${id}`
-  //
-  //   fetch(url)
-  //   .then( (res) => {
-  //     return res.json()
-  //   })
-  //   .then((res) => {
-  //     this.setState({
-  //       inventory: res
-  //     })
-  //   })
-  // }
 
   render(){
     const { inventory } = this.state;
@@ -49,13 +35,13 @@ export default class Inventory extends Component {
     })
     return(
       <div>
-      <div className="inventoyScrollList">
-      <ul className="inventory">{list}</ul>
-
-      </div>
-      <div>
-      <button className="closeButton" onClick={()=> this.props.showInventory(false)}>Close</button>
-      </div>
+        <div className="inventoyScrollList">
+          <ul className="inventory">{list}</ul>
+        </div>
+        <div className="buttons">
+          <button className="closeButton" onClick={()=> this.props.showInventory(false)}>Close</button>
+          <button className="closeButton">Add Item</button>
+        </div>
       </div>
     )
   }

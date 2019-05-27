@@ -48,6 +48,11 @@ This project was approached as the first personal project I carried out having f
 The project was not test driven, sacrificing test-driven control for learning React and its many applications. This approach was also taken as I was unsure of what to expect when working with the new library and wanted to worry about learning what React can do before learning how to test that it does what I expect.
 
 
+## App Models
+
+[Component Tree](https://drive.google.com/open?id=1DkufOEr7-kdcP0NUH3Qx0M2rkCyAGSV-)
+
+
 ## Component Break Down
 
  - App - Main page User visits on entry, shows them a table of their current characters. Retrieves data from rails API.
@@ -96,4 +101,3 @@ This section began on 27/05/2019 and will account for important learnings since 
   - Managing whitespace provided by .map for JSX returns
   - CSS grid usage and deployment
   - Can view the designed grid through dev tools
-  
