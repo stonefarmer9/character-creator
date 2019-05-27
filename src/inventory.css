@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Artifika|Cinzel');
-
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, [column] auto);
+  grid-template-rows: repeat(10, [row] auto);
+}
 
 .inventory{
   font-size: .75em;
@@ -10,8 +14,10 @@
 }
 
 .inventoyScrollList {
-  width:300px;
-  height: 300px;
+  grid-row-start: 1;
+  grid-row-end: 10;
+  grid-column-start: 3;
+  grid-column-end: 6;
   overflow: scroll;
 }
 
@@ -66,8 +72,28 @@
 
 }
 
+.equipmentList {
+  grid-column-start: 6;
+  grid-column-end: 10;
 
+  grid-row-start: 1;
+  grid-row-end: 10;
 
+  overflow: scroll;
+
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffffff
+
+}
+
+.buttons {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
 
 .closeButton{
   font-size: 1.5em;
