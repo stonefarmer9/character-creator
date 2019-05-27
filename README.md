@@ -100,7 +100,7 @@ Georges Le Vaillant
 
 This section began on 27/05/2019 and will account for important learnings since then.
 
-  - Use if JSX fragments
+  - Using JSX fragments correctly
   - Making a scrollable component
   - Managing whitespace provided by .map for JSX returns
   - CSS grid usage and deployment
