@@ -49,8 +49,12 @@ The project was not test driven, sacrificing test-driven control for learning Re
 
 
 ## App Models
+### A simple component model
+![Simple Component Tree](diagrams/SimpleDiagram.png)
 
-![Component Tree](https://drive.google.com/open?id=1DkufOEr7-kdcP0NUH3Qx0M2rkCyAGSV-)
+### A More detailed tree
+![Detailed Component Tree](diagrams/DetailedDiagram.png)
+
 
 
 ## Component Break Down
