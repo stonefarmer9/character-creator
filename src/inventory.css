@@ -9,19 +9,65 @@
 
 }
 
-.item{
+.inventoyScrollList {
+  width:300px;
+  height: 300px;
+  overflow: scroll;
+}
+
+.name{
   border-style: solid;
   border-color:  #000066;
-  border-width: 3px;
   border-radius: 8px;
 
-  background-color: black;
+  background-image: linear-gradient(black, #000080);
 
   font-size: 1.5em;
   font-family: 'Cinzel', serif;
   color: #ffffff
 
 }
+.value{
+  border-style: solid;
+  border-color:  #000066;
+  border-radius: 8px;
+
+  background-image: linear-gradient(#000080, #0000b3);
+
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffffff
+
+}
+
+.weight{
+  border-style: solid;
+  border-color:  #000066;
+  border-radius: 8px;
+
+  background-image: linear-gradient(#0000b3, #0000ff);
+
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffffff
+
+}
+
+.rarity{
+  border-style: solid;
+  border-color:  #000066;
+  border-radius: 8px;
+
+  background-image: linear-gradient(#0000ff, #b3b3ff);
+
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  color: #ffffff
+
+}
+
+
+
 
 .closeButton{
   font-size: 1.5em;
