@@ -105,3 +105,4 @@ This section began on 27/05/2019 and will account for important learnings since 
   - Managing whitespace provided by .map for JSX returns
   - CSS grid usage and deployment
   - Can view the designed grid through dev tools
+  - If an API does not have CORS installed a javascript program will not be able to directly fetch data, you can use a proxy like the one in equipmentList Fetch to bypass this problem. 
