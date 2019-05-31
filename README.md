@@ -79,13 +79,15 @@ The project was not test driven, sacrificing test-driven control for learning Re
 
 Due to the nature of this project this will be kept updated with what is the next step for me to complete.
 
- - Inventory - Add items to the inventory array in state.
+ - ~~Inventory - Add items to the inventory array in state.~~
 
- - Add Inventory to Rails API associated to character
+ - ~~Add Inventory to Rails API associated to character~~
+
+ - Get adding inventory items working NEXT.
 
  - Remove hardcoded values.
 
- - Connect to DnD API (yay its finally here!!!) and retrieve items data, structure and display it so add list can be a tick section not text box input.
+ - ~~Connect to DnD API (yay its finally here!!!) and retrieve items data, structure and display it so add list can be a tick section not text box input.~~
 
  - Style the ever-loving-shit out of it.
 
@@ -95,7 +97,7 @@ Due to the nature of this project this will be kept updated with what is the nex
 
  - The number of API requests is getting high and will get higher, this could be resolved by creating my own database to draw from rather than a public API ?
 
- 
+
 
 ## Contributing
   Feel free to help a brother out, clone this repo and submit a pull request and I shall endeavour to google how to deal with that situation.
