@@ -105,4 +105,13 @@ This section began on 27/05/2019 and will account for important learnings since 
   - Managing whitespace provided by .map for JSX returns
   - CSS grid usage and deployment
   - Can view the designed grid through dev tools
-  - If an API does not have CORS installed a javascript program will not be able to directly fetch data, you can use a proxy like the one in equipmentList Fetch to bypass this problem. 
+  - If an API does not have CORS installed a javascript program will not be able to directly fetch data, you can use a proxy like the one in equipmentList Fetch to bypass this problem.
+
+  - I have not setup and declared my grids correctly. I need to go through each component grid from bottom to top, the top level grid I believe is working.
+    - Possibly: Poor naming of different grids and CSS variables are pinning to wrong grid.
+    - Possibly: My column, row sizes are not large enough for the large scale change I expect.
+    - Solutions:
+          - First: research grid and check your grids are correct.
+          - Second: Re-configure/design your grids & nested grids from bottom to top.
+
+          
