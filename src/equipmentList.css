@@ -1,0 +1,15 @@
+.fullList {
+  list-style: none;
+  height: 200px;
+  width:400px;
+}
+
+.item{
+  text-align: left;
+
+  background-color: white;
+  color: black;
+  border: 2px;
+  border-style: solid;
+  font-size: 0.75em;
+}

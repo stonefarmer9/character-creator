@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './equipmentList.css'
 
 export default class EquipmentList extends Component {
   constructor(props){
@@ -27,17 +28,27 @@ export default class EquipmentList extends Component {
     .then((response) => {
       console.log("second then")
       this.setState({
-        equipment: response
+        equipment: response.results
       })
     })
   }
 
   render(){
-    const { equipment } = this.state
+    const { equipment } = this.state;
+    console.log(equipment);
+    var list = equipment.map(function(item){
+      return (
+        <>
+          <li className='item'>{item.name}</li>
+        </>
+      )
+    })
 
     return(
       <div className="container">
-      {equipment.count}
+        <ul className="fullList">
+          {list}
+        </ul>
       </div>
     )
   }
