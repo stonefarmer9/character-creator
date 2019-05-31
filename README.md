@@ -89,6 +89,14 @@ Due to the nature of this project this will be kept updated with what is the nex
 
  - Style the ever-loving-shit out of it.
 
+ - Look at Styles Grids.
+
+ - I need to reconsider my structure of inventory and how many children the component has and how many need state - Could work better if inventory did all the API fetching.
+
+ - The number of API requests is getting high and will get higher, this could be resolved by creating my own database to draw from rather than a public API ?
+
+ 
+
 ## Contributing
   Feel free to help a brother out, clone this repo and submit a pull request and I shall endeavour to google how to deal with that situation.
 
@@ -113,5 +121,3 @@ This section began on 27/05/2019 and will account for important learnings since 
     - Solutions:
           - First: research grid and check your grids are correct.
           - Second: Re-configure/design your grids & nested grids from bottom to top.
-
-          
