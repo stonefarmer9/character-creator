@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './inventory.css'
+import './styles/inventory.css'
 import EquipmentList from './equipmentList'
 
 export default class Inventory extends Component {

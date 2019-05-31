@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './TableBody.css'
+import './styles/TableBody.css'
 
 const TableBody = props => {
 

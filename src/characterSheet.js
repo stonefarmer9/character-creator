@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Inventory from './Inventory'
-import './characterSheet.css'
+import './styles/characterSheet.css'
 import Background from './images/parchment.png'
 var modify = require('./scripts/modifiers')
 
